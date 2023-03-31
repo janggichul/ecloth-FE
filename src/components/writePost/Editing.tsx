@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import {LOGIN_ID} from "../detailPost/Detail";
-import PostImage from "../detailPost/PostImage";
 import { dummy } from "../feed/FeedBody";
 import ItemUser from "../feed/ItemUser";
 import ImagePrint from "./ImagePrint";
@@ -15,7 +14,9 @@ function Editing() {
   console.log(parseInt(postId as string, 10)-1)
   return (
     <WritingWrapper>
-        <PostImage imgs={posting[0].images} />
+      <ImageWrapper>
+        <ImagePrint imgUrl={posting[0].images}/>
+      </ImageWrapper>
       <ContentWrapper>
         <ItemUser id={LOGIN_ID} img="" />
         <TitleInput value={posting[0].title}/>
